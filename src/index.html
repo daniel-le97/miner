@@ -1,0 +1,836 @@
+<!-- Updated HTML WITH BOOTSTRAP/MDI/FONT-AWESOME/GOOGLE-FONTS/DEBUG/SCRIPTS -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <title>Document</title>
+    <!-- NOTE Bootstrap -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet" />
+    <!-- NOTE MDI ICONS -->
+    <link rel="stylesheet" href="./css/materialdesignicons.min.css" />
+    <!-- NOTE GoogleFonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="./css/googlefonts.css" rel="stylesheet" />
+    <!-- NOTE style.css -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <!-- SECTION STYLES -->
+  <style>
+    body.debug .container,
+    body.debug .container-fluid {
+      outline: 2px double blue;
+      outline-offset: -2px;
+    }
+
+    body.debug .row {
+      outline: 2px dashed red;
+      outline-offset: -2px;
+    }
+
+    body.debug [class*="col-"] {
+      outline: 2px dotted forestgreen;
+      outline-offset: -3px;
+    }
+  </style>
+  <!-- !SECTION -->
+
+  <body class="">
+    <!-- NOTE CURSOR TEST -->
+    <div class="cursor" style="top: 304px; left: 888px"></div>
+    <header class="container-fluid">
+      <!-- <div class="row">
+        <div class="col-md-12 text-center bg-dark text-light">
+          <h1>MOON MINER TUNG</h1>
+          
+        </div>
+      </div> -->
+    </header>
+
+    <!-- --------------------------------------------- -->
+    <!-- SECTION I WANT TO HIDE -->
+    <!-- <section id="welcomeCard" class="welcome-card container-fluid bg-dark  ">
+  <div class="row  pt-5 ps-5 ms-5">
+    <div class="col-md-4 d-flex mt-5 pt-5">
+      <img src="https://i.giphy.com/media/3oEjHNf3ApVJpDp9vi/giphy.webp" alt="" srcset="" class="rounded-circle border border-3 border-dark" style="width: 20rem;">
+    </div>
+    <div class="col-md-6 d-flex ">
+      <marquee behavior="scroll" direction="up" scrollamount="5"><h1 class="text-light">Please... get me out of here... 
+      hit the Interdimensional Portal and collect the orbs and free me from their prison...</them></h1></marquee>
+    </div>
+    <div class="col-md-12 d-flex justify-content-center pb-3">
+      
+      <img
+      id="begin"
+      onclick="getStarted()"
+      src="https://media3.giphy.com/media/3ohs4CacylzFaHjMM8/giphy.gif?cid=ecf05e471p62dp2o4eni61n3sxvbw17q73lcowyt3f9lbo2p&rid=giphy.gif&ct=g"
+      alt="Insulated"
+      class="img-fluid rounded-circle heart test orb-glow cursor-stuff glowing-circle bounce "
+    />
+   
+  
+    </div>
+  </div></section> -->
+    <!-- ---------------------------------------------- -->
+
+    <main id="game" class="position-relative">
+      <!-- SECTION BADGES -->
+      <div class="section container-fluid">
+        <div class="row">
+          <div id="badgeSpot" class="col-md-12 mt-3 ms-3">
+            <span id="badge1" class="visually-hidden"
+              ><img
+                src="./resources/AlienMedal4.png"
+                class="heart rounded-circle shadow-filter"
+                style="width: 3rem"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                data-bs-title="Badge: 'Meh' 10k Orbs Collected && Defeated 1st Boss"
+              />
+            </span>
+
+            <span id="badge2" class="visually-hidden"
+              ><img
+                src="./resources/AlienMedal2.png"
+                class="heart rounded-circle shadow-filter"
+                style="width: 3rem"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                data-bs-title="Badge: 'Getting Started' 20k Orbs Collected && Defeated 2nd Boss"
+              />
+            </span>
+
+            <span id="badge3" class="visually-hidden"
+              ><img
+                src="./resources/AlienMedal3.png"
+                class="heart rounded-circle shadow-filter"
+                style="width: 3rem"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                data-bs-title="Badge:'Ben Stiller' 50k Orbs Collected && Defeated 3rd Boss"
+              />
+            </span>
+            <!-- ----------------- -->
+            <span id="badge4" class="visually-hidden"
+              ><img
+                src="./resources/AlienMedal1.png"
+                class="heart rounded-circle shadow-filter"
+                style="width: 3rem"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                data-bs-title="Badge:'Finger Cramp' 100k Orbs Collected && Defeated 4th Boss"
+              />
+            </span>
+            <!-- ------------------------- -->
+            <span id="pickBadge" class="visually-hidden"
+              ><img
+                src="./resources/pickaxebadge.png"
+                class="heart rounded-circle shadow-filter"
+                style="width: 3rem"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                data-bs-title="Badge:'Super Saiyan Mouse' 5k Click Bonus Added"
+              />
+            </span>
+            <!-- ------------- -->
+            <span id="laserBadge" class="visually-hidden"
+              ><img
+                src="./resources/laser.png"
+                class="heart rounded-circle shadow-filter"
+                style="width: 3rem"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                data-bs-title="Badge:'Taking a Nap' 5k Automatic Bonus Added"
+              />
+            </span>
+            <!-- ----------------------- -->
+            <span id="specialGunBadge" class="visually-hidden"
+              ><img
+                src="https://i.giphy.com/media/L2UHsn6f4Vmw4Dt8p3/giphy.webp"
+                class="heart rounded-circle shadow-filter"
+                style="width: 3rem"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                data-bs-title="Badge: Can't believe you actually got this OP Gun..."
+              />
+            </span>
+            <!-- --------------------------------------- -->
+            <span id="callForHelpBadge" class="visually-hidden"
+              ><img
+                src="./resources/Alien1.png"
+                class="heart rounded-circle shadow-filter"
+                style="width: 3rem"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                data-bs-title="Badge:'Stranger Danger No More' Befriended 5 Aliens"
+              />
+            </span>
+            <!-- ------------------------------------------- -->
+            <span id="makeADealBadge" class="visually-hidden"
+              ><img
+                src="https://media1.giphy.com/media/GE5LUTVEdH5LrvIppa/giphy.gif"
+                class="heart rounded-circle shadow-filter"
+                style="width: 3rem"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                data-bs-title="Badge:'Devil's CrossRoad Traded Part Of Your Soul"
+              />
+            </span>
+            <!-- --------------------------------------------------------- -->
+            <span id="boss1" class="visually-hidden"
+              ><img
+                src="https://i.giphy.com/media/5Rg9bh6LyLKuY/giphy.webp"
+                class="heart rounded-circle shadow-filter"
+                style="width: 3rem"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                data-bs-title="Badge:'Only The Start' pass Phase:1"
+              />
+            </span>
+            <span id="boss2" class="visually-hidden"
+              ><img
+                src="https://media3.giphy.com/media/GLIjqI7Q7aha81olc5/giphy.gif?cid=790b7611db710ec442cc6c216c9a31585ab6b66bc47fea5e&rid=giphy.gif&ct=g"
+                class="heart rounded-circle shadow-filter"
+                style="width: 3rem"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                data-bs-title="Badge:'What is This'pass Phase:2"
+              />
+            </span>
+            <span id="boss3" class="visually-hidden"
+              ><img
+                src="https://i.giphy.com/media/otzvbOMu2qSVMOoTTX/giphy.webp"
+                class="heart rounded-circle shadow-filter"
+                style="width: 3rem"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                data-bs-title="Badge:'Drop In The Well' pass Phase:3"
+              />
+            </span>
+
+            <span id="boss4" class="visually-hidden"
+              ><img
+                src="https://i.giphy.com/media/hq64aPc8ExJpiXgRtR/giphy.webp"
+                class="heart rounded-circle shadow-filter"
+                style="width: 3rem"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                data-bs-title="Badge:'Iron Clad Fingers' pass Phase:4"
+              />
+            </span>
+            <span id="boss5" class="visually-hidden"
+              ><img
+                src="https://i.giphy.com/media/s5arkl7ICEsyMsyUXA/giphy.webp"
+                class="heart rounded-circle shadow-filter"
+                style="width: 3rem"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                data-bs-title="Badge:'I See You' pass Phase:5"
+              />
+            </span>
+            <span id="boss6" class="visually-hidden"
+              ><img
+                src="https://i.giphy.com/media/fjxtT75gj7LrN3AHT3/giphy.webp"
+                class="heart rounded-circle shadow-filter"
+                style="width: 3rem"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                data-bs-title="Badge:'Metamorphosis'pass Phase:6 "
+              />
+            </span>
+            <span id="boss7" class="visually-hidden"
+              ><img
+                src="https://i.giphy.com/media/kAQmvq1JXvca8fdGf4/giphy.webp"
+                class="heart rounded-circle shadow-filter"
+                style="width: 3rem"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                data-bs-title="Badge:'I Am All'pass Phase:7"
+              />
+            </span>
+            <span id="theGirl" class="visually-hidden"
+              ><img
+                src="https://i.giphy.com/media/3PUzAcNsqoaDjXW3Pn/giphy.webp"
+                class="heart rounded-circle shadow-filter"
+                style="width: 3rem"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                data-bs-title="Badge:'Liberator' Saved The Ghost Girl. "
+              />
+            </span>
+            <span id="ghostBadge" class="visually-hidden"
+              ><img
+                src="./resources/ghost.png"
+                class="heart rounded-circle shadow-filter"
+                style="width: 3rem"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                data-bs-title="Badge:'GhostI like Ghibli Movies' "
+              />
+            </span>
+            <!----------------------------->
+
+            <!-- ----------------------------------------------------------- -->
+          </div>
+        </div>
+        <div class="row">
+          <!-- SECTION COLLECTED OVER ALL TIME -->
+        </div>
+        <!-- MAIN SECTION -->
+        <section class="container-fluid bounce">
+          <div class="row justify-content-start">
+            <div class="col-md-3 me-5">
+              <small>
+                <small class="text-light"> Orbs Collected Over All Time</small
+                ><br />
+                <span id="totalOrb-amount" class="text-info numberFont fs-1">
+                  <p>0</p>
+                </span>
+              </small>
+            </div>
+            <div
+              id="cookie"
+              onclick="mine()"
+              class="orb col-md-3 d-flex justify-content-center heart"
+              style="margin-left: 7rem"
+            >
+              <!-- GIF IMAGE HERE -->
+              <img
+                id="atomOrb"
+                onclick=""
+                src="https://64.media.tumblr.com/08e067f324fe4667c381990355329c97/tumblr_n5u9j9NycV1rf78nfo1_400.gifv"
+                alt="Insulated"
+                class="img-fluid rounded-circle heart test orb-glow opacity-75 glowing-circle"
+              />
+
+              <!-- NOTE AUDIO HERE -->
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- SECTION MARQUEE LAZER AND ATOM GUN -->
+      <section class="container-fluid alienandlaser bounce">
+        <div class="row">
+          <div class="col-md-12 d-flex justify-content-center">
+            <img
+              id="gunBeam"
+              src="https://media3.giphy.com/media/9Deey0LLskZPXAQG1v/giphy.gif?cid=ecf05e47qw26l8cc68xewgm30rtc8j2pxs8bksknd6py1ark&rid=giphy.gif&ct=s"
+              alt=""
+              class="visually-hidden"
+              style="width: 3rem"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 d-flex justify-content-center">
+            <img
+              id="gunGun"
+              src="https://i.giphy.com/media/L2UHsn6f4Vmw4Dt8p3/giphy.webp"
+              alt=""
+              class="visually-hidden"
+              style="width: 3rem"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div id="cookie" class="col-md-12 d-flex align-content-center">
+            <marquee id="lasermarquee" width="100%" direction="right" height="">
+              <!-- <img
+                src="https://media2.giphy.com/media/1rOy1l3mulySaqilto/giphy.gif?cid=ecf05e47oc9d0htfhowppmrlwdqgkhipbq2wuokomsbcvi6f&rid=giphy.gif&ct=s"
+                alt=""
+                srcset=""
+                style="width: 2rem"
+              /> -->
+            </marquee>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 d-flex align-content-center">
+            <marquee id="alienmarquee" width="100%" direction="right" height="">
+              <!-- <img
+                src="./resources/Alien1.png"
+                alt=""
+                srcset=""
+                style="width: 2rem"
+              /> -->
+            </marquee>
+          </div>
+        </div>
+      </section>
+
+      <!-- ---------- -->
+
+      <!-- NOTE  UPGRADES -->
+      <section class="container-fluid bounce pt-5">
+        <div class="row justify-content-center">
+          <!-- -------------------------------- -->
+
+          <!-- SECTION click Count and automatic Click Count -->
+          <section
+            class="container-fluid justify-content-center menubar bounce"
+          >
+            <div class="row justify-content-center">
+              <!-- STUB clickcount-bonus -->
+              <div
+                class="col-md-3 bg-info d-flex border border-light rounded-top justify-content-evenly"
+              >
+                <div class="fs-4">
+                  +
+                  <span id="clickCount-bonus" class="fs-1 numberFont"></span>
+                </div>
+                <div class="p-2">
+                  <i class="mdi mdi-cursor-default-click fs-1"></i>
+                </div>
+              </div>
+              <div
+                class="orbAmount col-md-2 bg-dark text-light border border-light rounded-top d-flex justify-content-evenly mx-1"
+              >
+                <span
+                  ><img
+                    src="https://media2.giphy.com/media/3o6vXTpomeZEyxufGU/giphy.gif?cid=790b761154686d361fb0f07e555bc4939434f436caa17941&rid=giphy.gif&ct=g"
+                    alt=""
+                    class="pt-3 heart rounded-circle shadow-filter"
+                    style="width: 3rem"
+                  />'s:</span
+                >
+                <!-- <img src="https://c.tenor.com/adJYEUbjbSgAAAAd/pondering-my-orb-monkey-swimming.gif" alt="" style="width:10rem;height:10rem"> -->
+                <!-- NOTE SPAN orb-total-amount -->
+                <span id="orb-amount" class="text-danger numberFont fs-1">
+                  <p>0</p></span
+                >
+                <br />
+              </div>
+              <div
+                class="col-md-3 bg-danger border border-light rounded-top d-flex justify-content-evenly"
+              >
+                <!-- autoClickCount-Bonus -->
+                <!-- IMAGE hourclass -->
+                <div class="">
+                  <img
+                    src="./resources/hourglass.png"
+                    alt=""
+                    class="mt-3"
+                    style="width: 2rem"
+                  />
+                  <span id="timer" class="text-warning">3</span>
+                </div>
+                <div>
+                  <span class="fs-3">+</span>
+                  <span id="autoClickCount-bonus" class="numberFont fs-1"
+                    >0</span
+                  >
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- ---------------------------------- -->
+          <!-- SECTION CLICK UPGRADES -->
+          <div
+            class="col-md-6 bg-warning text-light justify-content-center pb-5"
+          >
+            <div class="container-fluid">
+              <div class="row py-1 mb-4">
+                <div class="col-md-6 bg-dark rounded-start">CLICK UPGRADES</div>
+                <div class="col-md-6 bg-dark rounded-end">AUTO UPGRADES</div>
+                <div
+                  class="col-md-6 mt-1 bg-dark rounded-start border-end py-2"
+                >
+                  <!-- PICKAXE -->
+
+                  <img
+                    id="pickaxeIcon"
+                    onclick="upgrade('pickaxe')"
+                    src="./resources/pickaxe.png"
+                    alt=""
+                    class="cursor-stuff itemglow rounded-circle cannotPurchase"
+                    style="width: 4rem"
+                  />
+
+                  <img
+                    src="https://media2.giphy.com/media/3o6vXTpomeZEyxufGU/giphy.gif?cid=790b761154686d361fb0f07e555bc4939434f436caa17941&rid=giphy.gif&ct=g"
+                    alt=""
+                    class="rounded-circle"
+                    style="width: 2rem"
+                  />
+                  <small>x</small>
+                  <!-- STUB PICKAXECOST -->
+                  <span id="pickaxe-cost" class="text-info"></span>
+                  <span class="ms-2"
+                    ><small class="cb"
+                      >+5<i class="mdi mdi-cursor-default-click"></i
+                    ></small> </span
+                  ><br />
+
+                  <!-- ---------------- -->
+                  <!-- MEGA PICK AXE -->
+
+                  <img
+                    id="megaPickAxeIcon"
+                    onclick="upgrade('megapickaxe')"
+                    src="./resources/pickaxe.png"
+                    alt=""
+                    class="cursor-stuff megapickaxe mt-2 itemglow rounded-circle cannotPurchase"
+                    style="width: 4rem"
+                  />
+
+                  <img
+                    src="https://media2.giphy.com/media/3o6vXTpomeZEyxufGU/giphy.gif?cid=790b761154686d361fb0f07e555bc4939434f436caa17941&rid=giphy.gif&ct=g"
+                    alt=""
+                    class="rounded-circle"
+                    style="width: 2rem"
+                  />
+                  <small>x</small>
+                  <!-- STUB megapickaxe-cost -->
+                  <span id="megapickaxe-cost" class="text-info"></span>
+
+                  <span class="ms-2"
+                    ><small class="cb"
+                      >+100<i class="mdi mdi-cursor-default-click"></i
+                    ></small> </span
+                  ><br />
+                  <!-- ------------- -->
+                  <!-- ULTRA PICK -->
+
+                  <img
+                    id="ultraPickAxeIcon"
+                    onclick="upgrade('ultrapickaxe')"
+                    src="./resources/pickaxe.png"
+                    alt=""
+                    class="cursor-stuff ultramegapickaxe mt-2 itemglow rounded-circle cannotPurchase"
+                    style="width: 4rem"
+                  />
+
+                  <img
+                    src="https://media2.giphy.com/media/3o6vXTpomeZEyxufGU/giphy.gif?cid=790b761154686d361fb0f07e555bc4939434f436caa17941&rid=giphy.gif&ct=g"
+                    alt=""
+                    class="rounded-circle"
+                    style="width: 2rem"
+                  />
+                  <small>x</small>
+                  <!-- --- STUB ultrapickaxe-cost -->
+                  <span id="ultrapickaxe-cost" class="text-info"></span>
+
+                  <span class="ms-2"
+                    ><small class="cb"
+                      >+1000<i class="mdi mdi-cursor-default-click"></i
+                    ></small>
+                  </span>
+
+                  <!-- ---------- -->
+                </div>
+                <div
+                  class="col-md-6 mt-1 bg-dark rounded-end border-start py-2"
+                >
+                  <!-- autoupgradeone -->
+                  <img
+                    id="laserIcon"
+                    onclick="autoUpgradesLaser('laser')"
+                    src="./resources/space-gun.png"
+                    alt=""
+                    class="cursor-stuff itemglow rounded-circle cannotPurchase"
+                    style="width: 4rem"
+                  />
+
+                  <img
+                    src="https://media2.giphy.com/media/3o6vXTpomeZEyxufGU/giphy.gif?cid=790b761154686d361fb0f07e555bc4939434f436caa17941&rid=giphy.gif&ct=g"
+                    alt=""
+                    class="rounded-circle"
+                    style="width: 2rem"
+                  />
+                  <small>x</small>
+                  <span id="laser-cost" class="text-info">0</span>
+                  <span class="ms-2"><small class="cb">+25 | 1sec</small> </span
+                  ><br />
+                  <!-- -------------------- -->
+                  <!-- autoupgradetwo -->
+                  <img
+                    id="megaLaserIcon"
+                    onclick="autoUpgradesLaser('megalaser')"
+                    src="./resources/space-gun.png"
+                    alt=""
+                    class="cursor-stuff megalaser itemglow rounded-circle my-2 cannotPurchase"
+                    style="width: 4rem"
+                  />
+
+                  <img
+                    src="https://media2.giphy.com/media/3o6vXTpomeZEyxufGU/giphy.gif?cid=790b761154686d361fb0f07e555bc4939434f436caa17941&rid=giphy.gif&ct=g"
+                    alt=""
+                    class="rounded-circle"
+                    style="width: 2rem"
+                  />
+                  <small>x</small>
+                  <span id="megalaser-cost" class="text-info">0</span>
+                  <span class="ms-2"><small class="cb">+75 |1sec</small> </span>
+                  <span class=""
+                    ><img
+                      src="./resources/clock.png"
+                      alt=""
+                      style="width: 1rem; color: wheat" /></span
+                  ><br />
+                  <!-- ---------------- -->
+                  <!-- autoupgrade3 -->
+                  <img
+                    id="ultraLaserIcon"
+                    onclick="autoUpgradesLaser('ultralaser')"
+                    src="./resources/space-gun.png"
+                    alt=""
+                    class="cursor-stuff ultralaser itemglow rounded-circle cannotPurchase"
+                    style="width: 4rem"
+                  />
+
+                  <img
+                    src="https://media2.giphy.com/media/3o6vXTpomeZEyxufGU/giphy.gif?cid=790b761154686d361fb0f07e555bc4939434f436caa17941&rid=giphy.gif&ct=g"
+                    alt=""
+                    class="rounded-circle"
+                    style="width: 2rem"
+                  />
+                  <small>x</small>
+                  <span id="ultralaser-cost" class="text-info">0</span>
+                  <span class="ms-2"
+                    ><small class="cb">+100 | 1sec</small> </span
+                  ><br />
+                  <!-- --------------------------- -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION STATS -->
+          <div
+            class="statstest col-md-6 text-light bg-warning justify-content-center"
+          >
+            <div class="container-fluid">
+              <div class="row py-1">
+                <div class="col-md-6 bg-dark rounded-start">CLICK STATS</div>
+                <div class="col-md-6 bg-dark rounded-end">AUTOMATIC STATS</div>
+
+                <!-- CLICK STATS SECTION -->
+                <div class="col-md-6 mt-1 bg-dark rounded-start py-2">
+                  <!-- PICKAXE -->
+                  <div>
+                    <img
+                      id="pickimg"
+                      src="./resources/pickaxe.png"
+                      alt=""
+                      class="cursor-stuff mt-2 itemglow rounded-circle"
+                      style="width: 2rem"
+                    />
+                    <small> | </small>
+                    <span id="pickaxe-count" class="text-danger">0</span>
+                    <span class="mx-3"
+                      ><img
+                        src="./resources/right-arrow.png"
+                        alt=""
+                        style="width: 1rem"
+                    /></span>
+                    <span>+</span>
+                    <span id="pickAxeMultiplier" class="text-warning">0</span>
+                  </div>
+                  <!-- MEGA PICK -->
+                  <div class="">
+                    <img
+                      id="pickimg"
+                      src="./resources/pickaxe.png"
+                      alt=""
+                      class="cursor-stuff megapickaxe mt-2 itemglow rounded-circle"
+                      style="width: 2rem"
+                    />
+                    <small>|</small>
+                    <span id="megapickaxe-count" class="text-danger">0</span>
+                    <span class="mx-3"
+                      ><img
+                        src="./resources/right-arrow.png"
+                        alt=""
+                        style="width: 1rem"
+                    /></span>
+                    <span>+</span>
+                    <span id="megaPickAxe-Multiplier" class="text-warning"
+                      >0</span
+                    ><br />
+                  </div>
+                  <!-- ULTRAPICK -->
+                  <div>
+                    <img
+                      id="pickimg"
+                      src="./resources/pickaxe.png"
+                      alt=""
+                      class="cursor-stuff ultramegapickaxe mt-2 itemglow rounded-circle"
+                      style="width: 2rem"
+                    />
+
+                    <small>|</small>
+                    <span id="ultraPickaxe-count" class="text-danger">0</span>
+                    <span class="mx-3"
+                      ><img
+                        src="./resources/right-arrow.png"
+                        alt=""
+                        style="width: 1rem"
+                    /></span>
+                    <span>+</span>
+                    <span id="ultraPickAxe-Multiplier" class="text-warning"
+                      >0</span
+                    ><br />
+                  </div>
+                </div>
+                <!-- SECTION AUTOMATIC STATS -->
+                <div class="col-md-6 mt-1 bg-dark rounded-end py-2">
+                  <!-- autoupgradeone -->
+                  <img
+                    src="./resources/space-gun.png"
+                    alt=""
+                    class="cursor-stuff itemglow rounded-circle"
+                    style="width: 2rem"
+                  />
+
+                  <small>|</small>
+                  <span id="laser-count" class="text-danger">0</span>
+                  <span class="mx-3"
+                    ><img
+                      src="./resources/right-arrow.png"
+                      alt=""
+                      style="width: 1rem"
+                  /></span>
+                  <span>+</span>
+                  <span id="laser-Multiplier" class="text-warning">0</span>
+                  <br />
+                  <!-- -------------------- -->
+                  <!-- autoupgradetwo -->
+                  <img
+                    src="./resources/space-gun.png"
+                    alt=""
+                    class="cursor-stuff megalaser itemglow rounded-circle my-2"
+                    style="width: 2rem"
+                  />
+
+                  <small>|</small>
+                  <span id="megalaser-count" class="text-danger">0</span>
+                  <span class="mx-3"
+                    ><img
+                      src="./resources/right-arrow.png"
+                      alt=""
+                      style="width: 1rem"
+                  /></span>
+                  <span>+</span>
+                  <span id="megaLaser-Multiplier" class="text-warning">0</span
+                  ><br />
+                  <!-- ---------------- -->
+                  <!-- autoupgrade3 -->
+
+                  <img
+                    src="./resources/space-gun.png"
+                    alt=""
+                    class="cursor-stuff ultralaser itemglow rounded-circle"
+                    style="width: 2rem"
+                  />
+                  <small>|</small>
+                  <span id="ultralaser-count" class="text-danger">0</span>
+                  <span class="mx-3"
+                    ><img
+                      src="./resources/right-arrow.png"
+                      alt=""
+                      style="width: 1rem"
+                  /></span>
+                  <span>+</span>
+                  <span id="ultraLaser-Multiplier" class="text-warning">0</span>
+                  <!-- ------------- -->
+                </div>
+                <!-- --------------------- -->
+                <!-- SECTION SPECIAL GUN -->
+                <div
+                  class="my-1 rounded bg-dark d-flex justify-content-between"
+                >
+                  <small class="me-5"
+                    >Broken Gun <small class="text-danger">1Max</small></small
+                  >
+                  <small class="me-4"
+                    >Call For Help
+                    <small class="text-danger">5Max</small></small
+                  >
+                  <small class=""
+                    >Make A Deal <small class="text-danger">1Max</small></small
+                  >
+                </div>
+                <div
+                  id="special1"
+                  class="col-md-3 mt-1 rounded pb-1 ms-2 me-1 gunbg d-flex justify-content-center border border-5 border-dark cannotPurchase"
+                >
+                  <div class="d-flex justify-content-center">
+                    <img
+                      onclick="specialGun('specialGun')"
+                      src="https://i.giphy.com/media/L2UHsn6f4Vmw4Dt8p3/giphy.webp"
+                      alt=""
+                      class="cursor-stuff rotate shadow-filter"
+                      style="width: 5rem"
+                    />
+                  </div>
+                </div>
+                <!-- ---------SECTION CALL FOR HELP------- -->
+                <div
+                  id="special2"
+                  class="col-md-3 mt-1 me-5 ms-5 rounded pb-1 alienhelp d-flex justify-content-center border border-5 border-dark cannotPurchase"
+                >
+                  <div class="d-flex justify-content-center">
+                    <img
+                      onclick="callForHelp('callForHelp')"
+                      src="./resources/Alien1.png"
+                      alt=""
+                      class="cursor-stuff shadow-filter"
+                      style="width: 5rem"
+                    />
+                  </div>
+                </div>
+
+                <!-- --------SECTION MAKE A DEAL----------------- -->
+
+                <div
+                  id="special3"
+                  class="col-md-3 mt-1 mx-1 rounded pb-1 makeadeal d-flex justify-content-center border border-5 border-dark cannotPurchase"
+                >
+                  <div class="d-flex justify-content-center">
+                    <img
+                      onclick="makeADeal('makeADeal')"
+                      src="https://media1.giphy.com/media/GE5LUTVEdH5LrvIppa/giphy.gif"
+                      alt=""
+                      class="cursor-stuff shadow-filter"
+                      style="width: 5rem"
+                    />
+                  </div>
+                </div>
+
+                <!-- ----------------------------------------- -->
+                <div class="my-1 rounded bg-dark d-flex justify-content-around">
+                  <small class="me-5">
+                    <small class="cb">+1000/1sec</small></small
+                  >
+                  <small class="mx-1"
+                    ><small class="cb">+500/1sec</small></small
+                  >
+                  <small class="ms-5"
+                    ><small class="cb"
+                      >+1000<i class="mdi mdi-cursor-default-click"></i></small
+                  ></small>
+                </div>
+                <!-- ---------------------------------------- -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+
+    <!-- SECTION SCRIPTS -->
+    <script src="./js/fontawesome.js" crossorigin="anonymous"></script>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/popper.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+
+    <script src="app.js"></script>
+    <!-- !SECTION -->
+  </body>
+</html>

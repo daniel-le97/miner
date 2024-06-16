@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@1,500&family=Audiowide&family=Fascinate+Inline&family=Mouse+Memoirs&family=Orbitron:wght@500&family=Poppins:wght@200&family=Roboto:ital,wght@1,300&family=Titan+One&display=swap');
+* {
+  font-family: 'Audiowide', cursive;
+}
+
+/* FOR CURSOR ANIMATION */
+/* body{
+  cursor: none;
+} */
+
+
+.cb{
+  color: #00ff42;
+}
+.numberFont{
+  font-family: 'Fascinate Inline', cursive;
+}
+ 
+.welcome-card{
+  
+  height: 100vh;
+  background-image: url(https://media0.giphy.com/media/xTiTnDmTbJl1rGeIEg/giphy.gif?cid=ecf05e47zq54bqm8tqwc767qawgm313a6tb26hux0pyl5bu7&rid=giphy.gif&ct=gp);
+  background-position: center;
+  background-size: cover;
+}
+
+main{
+  height: 100vh;
+  background-image: url(https://images.hdqwalls.com/download/3-dimensional-abstract-ux-3840x2160.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.orb{
+  
+  background-image: url(./resources/giphy-unscreen.gif);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  user-select: none;
+  cursor: pointer;
+}
+
+.statbg{
+  background-image: url(https://i.giphy.com/media/ll1ja37fH7eldHnErq/giphy.webp);
+  background-position: center;
+ background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* .alienandlaser{
+margin-top: 10rem;
+} */
+
+.cursor-stuff{
+  user-select: none;
+  cursor: pointer
+}
+
+.grey-out{
+  filter: grayscale(100%);
+
+}
+/* CURSOR DOT */
+
+
+/* .cursor{
+  z-index: 999;
+  background: #2696e8;
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow:  0 0 20px #2696e8,
+   0 0 60px #2696e8,
+  0 0 100px #2696e8;
+  animation: colors 5s infinite;
+  transform: translate(-50%,-50%);
+  display: none;
+}
+
+.cursor:before{
+content: '';
+position: absolute;
+background:#2696e8 ;
+width: 30px;
+height: 30px;
+opacity: 0.2;
+transform: translate(-35%,-35%);
+border-radius: 50%;
+}
+
+@keyframes colors{
+  0%{
+    filter: hue-rotate(0deg);
+  }
+  100%{
+    filter: hue-rotate(360deg);
+  }
+} */
+
+
+
+
+
+.cannotPurchase{
+
+  filter: grayscale(100%)!important;
+  transition: all 2s eas;
+border: 10px solid red;
+  pointer-events: none;
+}
+
+
+/* .tooltip-wrap {
+  position: relative;
+}
+.tooltip-wrap .tooltip-content {
+  display: none;
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  right: 5%;
+  background-color: #fff;
+  padding: .5em;
+  min-width: 10rem;
+}
+.tooltip-wrap:hover .tooltip-content {
+  display: block;
+} */
+
+
+
+
+.itemgrey{
+  filter: grayscale(100%);
+}
+.megapickaxe{
+  
+  filter: hue-rotate(30deg);
+}
+.ultramegapickaxe{
+filter: hue-rotate(120deg);
+}
+
+
+ .megalaser{
+  filter: hue-rotate(100deg);
+ }
+
+ .ultralaser{
+  filter: saturate(200%);
+  filter: hue-rotate(190deg);
+ }
+
+.itemglow:hover{
+  background-color: rgb(21, 220, 255) ;
+  transition: ease-in-out .3s;
+  box-shadow:0 0 10px rgb(187, 245, 255);
+}
+
+.rotate{
+  transform: rotate(90deg);
+
+}
+.shadow-filter{
+  -webkit-filter: drop-shadow(12px 12px 7px rgba(255, 0, 0, 0.5));
+  filter: drop-shadow( 1px 2px 2px rgba(117, 255, 239, 0.633));
+}
+
+
+
+  @keyframes animateHeart {
+    0% {
+      transform: scale(.85);
+    }
+    5% {
+      transform: scale(.85);
+    }
+    10% {
+      transform: scale(0.90);
+    }
+    15% {
+      transform: scale(0.90);
+    }
+    15% {
+      transform: scale(0.90);
+    }
+    15% {
+      transform: scale(0.90);
+    }
+    50% {
+      transform: scale(.85);
+    }
+    100% {
+      transform: scale(.85);
+    }
+  }
+  .heart {
+   
+    animation: animateHeart 1.2s infinite;
+  
+   
+  }
+
+
+  .orb-glow{
+     filter: saturate(200%); 
+  }
+
+  .orb-glow:hover{
+
+    transition: ease-in-out .3s;
+    box-shadow:10px  10px 50px rgb(227, 255, 15);
+    filter: brightness(100%), ;
+    transform: scale(1.01);
+   
+  }
+
+  .gunbg{
+    background-image: url(https://i.giphy.com/media/3o7btXYBdJbW7QPKLu/giphy.webp);
+    background-position: center;
+   background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .alienhelp{
+    background-image: url(https://media1.giphy.com/media/lFNmSjRDN9SiLJ3a9Z/giphy.gif?cid=ecf05e473a60wa3itj009scrasgatgvk73i1t83e3fvs5hqy&rid=giphy.gif&ct=g);
+    background-position: center;
+   background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .makeadeal{
+    background-image: url(https://media4.giphy.com/media/DYGbtrltNhHVX7xZTk/giphy.gif?cid=ecf05e47inhvtff9mcmuyw22019k8o23rajae4esyeocaxib&rid=giphy.gif&ct=g);
+    background-position: center;
+   background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+
+
+  .fade-in{
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+   
+    75% {
+        opacity: 0.75;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+  @keyframes bounceIn {
+    0% {
+      transform: scale(0.1);
+      opacity: 0;
+    }
+    60% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  .bounce {
+    animation: bounceIn 2s;
+  }
+  
+  /* SECTION FLOATING ACCORDIAN */
+  @keyframes Float {
+    0%,
+    100% {
+      transform: translateY(-5px);
+    }
+    50% {
+      transform: translateY(5px);
+    }
+  }
+  
+  .float {
+    animation: Float 2s infinite;
+  }
+  
+
+
+
+
+
+
+  @keyframes cf4FadeInOut {
+    0% {
+      opacity:1;
+    }
+    17% {
+      opacity:1;
+    }
+    25% {
+      opacity:0;
+    }
+    92% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+   }
+   
+  
